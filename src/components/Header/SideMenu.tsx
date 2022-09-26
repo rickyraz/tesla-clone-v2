@@ -3,7 +3,7 @@ import React, {
   SetStateAction,
   useRef,
   useEffect,
-  createRef,
+  useLayoutEffect,
 } from "react";
 import { gsap } from "gsap";
 
@@ -16,18 +16,16 @@ const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
   const toggleMenu = () => {
     showMenu(!thisMenu);
   };
-  let showAnimation = useRef<string | null>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      showAnimation.current,
-      {
-        right: "-20%",
-        opacity: 0,
-      },
-      { right: "0%", opacity: 1 }
-    );
-  }, []);
+  const elem0 = useRef(null);
+  useLayoutEffect(() => {
+    let from = gsap.from(elem0.current, { right: "-38%", opacity: 0 });
+    let to = gsap.to(elem0.current, { right: "0%", opacity: 1 });
+    return () => {
+      from.kill();
+      to.kill();
+    };
+  });
 
   const words = [
     {
@@ -94,10 +92,9 @@ const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
 
   return (
     <div
-      className={`  fixed top-0 right-0 z-[100000] min-w-[311px] overflow-y-scroll overscroll-contain overscroll-y-auto overscroll-x-contain bg-white font-montserrat text-base font-normal shadow-xl will-change-scroll ${
-        thisMenu === false ? "hidden" : ""
-      }`}
-      ref={showAnimation}
+      className={`fixed top-0 right-0 z-[100000] min-w-[311px] overflow-y-scroll overscroll-contain overscroll-y-auto overscroll-x-contain bg-white font-montserrat text-base font-normal shadow-xl will-change-scroll 
+      ${thisMenu === false ? "hidden" : ""}`}
+      ref={elem0}
     >
       <div className="sticky top-0 z-10 flex  flex-row-reverse justify-between p-5">
         <button
@@ -160,3 +157,15 @@ const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
 };
 
 export default SideMenu;
+
+//  let showAnimation = createRef();
+// useEffect(() => {
+//   gsap.fromTo(
+//     showAnimation.current,
+//     {
+//       right: "-50%",
+//       opacity: 0,
+//     },
+//     { right: "0%", opacity: 1 }
+//   );
+// }, []);

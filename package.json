@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
     "gsap": "^3.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -19,6 +20,7 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
     "autoprefixer": "^10.4.8",
+    "eslint-plugin-react-hooks": "^5.0.0-next-cb5084d1c-20220924",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
