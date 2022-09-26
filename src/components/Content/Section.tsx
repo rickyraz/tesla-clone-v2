@@ -25,23 +25,23 @@ export default function Section({
       <img
         src={backgroundImage}
         alt={alt}
-        className=" w-full h-screen object-cover"
+        className=" h-screen w-full object-cover"
       />
       {/* TEXT ON THE TOP BG */}
-      <div className="absolute top-0 left-0 w-full h-screen ">
-        <h1 className="flex justify-center mt-28 text-[40px] font-semibold">
+      <div className="absolute top-0 left-0 h-screen w-full ">
+        <h1 className="mt-28 flex justify-center text-4xl font-semibold md:text-[40px]">
           {title}
         </h1>
-        <p className=" flex justify-center pt-1">
+        <p className=" flex justify-center pt-[6px] ">
           {desc}
-          <a href="/" className="capitalize underline font-medium">
+          <a href="/" className="font-medium capitalize underline">
             {descLink}
           </a>
         </p>
 
         {/* BUTTONS */}
-        <div className="flex justify-center mt-94 mdmax:hidden">
-          <section className="space-x-5 text-sm font-semibold capitalize">
+        <div className="mt-94 flex justify-center mdmax:hidden">
+          <section className="space-x-5 text-sm font-semibold capitalize ">
             <a
               href="/"
               className="rounded-md bg-black/70 px-20 py-3 font-medium text-white "

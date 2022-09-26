@@ -9,11 +9,9 @@ import solarpanels from "../../assets/bg/solar-panel.jpg";
 import solarroof from "../../assets/bg/solar-roof.jpg";
 import accessories from "../../assets/bg/accessories.jpg";
 
-// main style className="snap-y"
-
 function Content() {
   return (
-    <main className="snap-y">
+    <main className="h-screen w-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden">
       <Section
         title="Model 3"
         alt="model 3"

@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import teslaLogo from "../../assets/tesla.svg";
+import SideMenu from "./SideMenu";
 
-type Props = {};
-
-export default function Header({}: Props) {
-  const [MenuSide, setMenuSide] = useState(false);
+export default function Header() {
+  const [MenuSide, setMenuSide] = useState<boolean>(false);
   return (
     <header className="fixed top-0 left-0 right-0 z-10 ">
       <div className="flex h-14 items-center justify-between font-montserrat text-sm font-semibold">
         <Logo />
         <Menu />
-        {/* setMenuSide={setMenuSide} */}
-        <RightMenu />
+        <RightMenu showMenu={setMenuSide} />
       </div>
-      {/* <SideMenuNav MenuSide={MenuSide} setMenuSide={setMenuSide} /> */}
+      <SideMenu thisMenu={MenuSide} showMenu={setMenuSide} />
     </header>
   );
 }
@@ -71,7 +69,11 @@ const Menu: React.FC = () => {
   );
 };
 
-const RightMenu: React.FC = () => {
+interface RightProps {
+  showMenu: Dispatch<SetStateAction<boolean>>;
+}
+
+const RightMenu: React.FC<RightProps> = ({ showMenu }) => {
   return (
     <ol className="flex pr-8">
       <div className="flex mdmax:hidden">
@@ -95,8 +97,8 @@ const RightMenu: React.FC = () => {
       <li>
         <a
           href="#main"
-          className="rounded-md py-2 px-4 hover:bg-slate-500/10"
-          //   onClick={() => setMenuSide(true)}
+          className="rounded-md py-2 px-4 hover:bg-slate-500/10 mdmax:bg-slate-500/40"
+          onClick={() => showMenu(true)}
         >
           Menu
         </a>
