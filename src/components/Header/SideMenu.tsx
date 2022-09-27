@@ -2,7 +2,6 @@ import React, {
   Dispatch,
   SetStateAction,
   useRef,
-  useEffect,
   useLayoutEffect,
 } from "react";
 import { gsap } from "gsap";
@@ -12,19 +11,25 @@ interface RightProps {
   thisMenu: boolean;
 }
 
-const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
-  const toggleMenu = () => {
+// showMenu is seState && thisMenu is State
+const SideMenu: React.FC<RightProps> = ({ thisMenu, showMenu }) => {
+  const elem0 = useRef(null);
+
+  const toggleShow = () => {
     showMenu(!thisMenu);
   };
 
-  const elem0 = useRef(null);
   useLayoutEffect(() => {
-    let from = gsap.from(elem0.current, { right: "-38%", opacity: 0 });
-    let to = gsap.to(elem0.current, { right: "0%", opacity: 1 });
-    return () => {
-      from.kill();
-      to.kill();
-    };
+    const menu = elem0.current;
+    if (thisMenu) {
+      gsap.fromTo(
+        menu,
+        { right: "-50%", opacity: 0 },
+        { right: "0%", opacity: 1, duration: 0.8 }
+      );
+    } else {
+      gsap.to(menu, { right: "-50%", opacity: 0, duration: 0.75 });
+    }
   });
 
   const words = [
@@ -92,16 +97,17 @@ const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
 
   return (
     <div
-      className={`fixed top-0 right-0 z-[100000] min-w-[311px] overflow-y-scroll overscroll-contain overscroll-y-auto overscroll-x-contain bg-white font-montserrat text-base font-normal shadow-xl will-change-scroll 
-      ${thisMenu === false ? "hidden" : ""}`}
+      className={`fixed top-0 right-0  min-w-[311px] overflow-auto overflow-y-auto overscroll-contain overscroll-y-contain  overscroll-x-contain bg-white font-montserrat text-base font-normal shadow-xl will-change-scroll ${
+        thisMenu === false ? "z-[0]" : "z-[1000]"
+      }`}
       ref={elem0}
     >
       <div className="sticky top-0 z-10 flex  flex-row-reverse justify-between p-5">
         <button
-          // aria-label="Close Modal"
+          aria-label="Close Modal"
           className=" cursor-pointer appearance-none rounded p-2 hover:bg-slate-500/10 hover:transition hover:duration-300 hover:ease-in focus:outline-1 focus:outline-offset-2 focus:outline-slate-900"
           type="button"
-          onClick={() => showMenu(false)}
+          onClick={toggleShow}
         >
           <svg
             className="h-6 w-6"
@@ -157,15 +163,3 @@ const SideMenu: React.FC<RightProps> = ({ showMenu, thisMenu }) => {
 };
 
 export default SideMenu;
-
-//  let showAnimation = createRef();
-// useEffect(() => {
-//   gsap.fromTo(
-//     showAnimation.current,
-//     {
-//       right: "-50%",
-//       opacity: 0,
-//     },
-//     { right: "0%", opacity: 1 }
-//   );
-// }, []);

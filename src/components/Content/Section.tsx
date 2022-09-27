@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-type SectionProps = {
+interface SectionProps {
   title: string;
   alt: string;
   desc?: string;
@@ -8,9 +8,9 @@ type SectionProps = {
   leftBtnText?: string;
   rightBtnText?: string;
   backgroundImage: string;
-};
+}
 
-export default function Section({
+const Section: FC<SectionProps> = ({
   title,
   desc,
   descLink,
@@ -18,7 +18,7 @@ export default function Section({
   rightBtnText,
   backgroundImage,
   alt,
-}: SectionProps) {
+}) => {
   return (
     <section className="relative snap-start font-montserrat">
       {/* BG */}
@@ -27,6 +27,7 @@ export default function Section({
         alt={alt}
         className=" h-screen w-full object-cover"
       />
+
       {/* TEXT ON THE TOP BG */}
       <div className="absolute top-0 left-0 h-screen w-full ">
         <h1 className="mt-28 flex justify-center text-4xl font-semibold md:text-[40px]">
@@ -40,18 +41,18 @@ export default function Section({
         </p>
 
         {/* BUTTONS */}
-        <div className="mt-94 flex justify-center mdmax:hidden">
-          <section className="space-x-5 text-sm font-semibold capitalize ">
+        <div className="relative flex h-full w-full justify-center">
+          <section className="absolute top-94 space-x-4 text-sm font-semibold capitalize sm:flex sm:space-x-6">
             <a
               href="/"
-              className="rounded-md bg-black/70 px-20 py-3 font-medium text-white "
+              className="rounded-md bg-black/70 px-5 py-3 font-medium text-white sm:px-10 md:px-20"
             >
-              <span>{leftBtnText}</span>
+              <span className="flex">{leftBtnText}</span>
             </a>
             {rightBtnText && (
               <a
                 href="/"
-                className="rounded-md bg-white/70 px-20 py-3 font-medium text-black"
+                className="rounded-md bg-white/70 px-5 py-3 font-medium text-black sm:px-6  md:px-20 "
               >
                 <span>{rightBtnText}</span>
               </a>
@@ -61,4 +62,7 @@ export default function Section({
       </div>
     </section>
   );
-}
+};
+
+export default Section;
+// sm:px-6 sm:py-1 md:px-20 md:py-3

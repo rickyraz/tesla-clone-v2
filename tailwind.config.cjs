@@ -11,9 +11,12 @@ module.exports = {
         74: "310px",
         94: "379px",
       },
-      screens: {
-        mdmax: { max: "910px" },
-      },
+    },
+    screens: {
+      sm: "599px",
+      md: "839px",
+      mdmax: { max: "839px" },
+      lgmax: { max: "1200px" },
     },
   },
   plugins: [],
