@@ -1,55 +1,58 @@
 nav {
   position: relative;
-  margin: 50px auto 0;
-  width: 590px;
-  height: 50px;
-  background: gray;
   border-radius: 8px;
   font-size: 0;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-  display: inline-block;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: white;
-  text-decoration: none;
-  line-height: 50px;
   position: relative;
+  display: inline-block;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  text-decoration: none;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
   z-index: 1;
   text-align: center;
+  cursor: pointer;
 }
 
 nav .animation {
   position: absolute;
+  width: 100px;
   height: 100%;
   top: 0;
   z-index: 0;
-  background: red;
-  width: 100px;
+  background-color: rgb(100 116 139 / 0.1);
   border-radius: 8px;
   transition: all 0.5s ease 0s;
+  opacity: 0;
 }
 
 a:nth-child(1) {
   width: 100px;
 }
 
+nav #kanan-satu a:nth-child(1) {
+  width: 80px;
+}
+
 nav .start-home,
 a:nth-child(1):hover ~ .animation {
   width: 100px;
   left: 0;
+  opacity: 100;
 }
 
 a:nth-child(2) {
-  width: 110px;
+  width: 100px;
 }
 
 nav .start-home,
 a:nth-child(2):hover ~ .animation {
-  width: 110px;
+  width: 100px;
   left: 100px;
+  opacity: 100;
 }
 
 a:nth-child(3) {
@@ -59,25 +62,38 @@ a:nth-child(3) {
 nav .start-home,
 a:nth-child(3):hover ~ .animation {
   width: 100px;
-  left: 210px;
+  left: 200px;
+  opacity: 100;
 }
 
 a:nth-child(4) {
-  width: 160px;
+  width: 100px;
 }
 
 nav .start-home,
 a:nth-child(4):hover ~ .animation {
-  width: 160px;
-  left: 310px;
+  width: 100px;
+  left: 300px;
+  opacity: 100;
 }
 
 a:nth-child(5) {
-  width: 120px;
+  width: 100px;
 }
 
 nav .start-home,
 a:nth-child(5):hover ~ .animation {
-  width: 120px;
-  left: 470px;
+  width: 100px;
+  left: 400px;
+  opacity: 100;
+}
+a:nth-child(6) {
+  width: 110px;
+}
+
+nav .start-home,
+a:nth-child(6):hover ~ .animation {
+  width: 110px;
+  left: 500px;
+  opacity: 100;
 }

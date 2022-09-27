@@ -29,34 +29,38 @@ const Section: FC<SectionProps> = ({
       />
 
       {/* TEXT ON THE TOP BG */}
-      <div className="absolute top-0 left-0 h-screen w-full ">
-        <h1 className="mt-28 flex justify-center text-4xl font-semibold md:text-[40px]">
+      <div className="absolute top-[112px] left-0 h-screen w-full ">
+        <h1 className="flex justify-center text-4xl font-semibold md:text-[40px]">
           {title}
         </h1>
-        <p className=" flex justify-center pt-[6px] ">
-          {desc}
-          <a href="/" className="font-medium capitalize underline">
-            {descLink}
-          </a>
-        </p>
+        <div className="flex justify-center">
+          <p className=" inline-block pt-[6px]">
+            {desc}
+            <a href="/" className=" font-medium capitalize underline">
+              {descLink}
+            </a>
+          </p>
+        </div>
 
         {/* BUTTONS */}
         <div className="relative flex h-full w-full justify-center">
-          <section className="absolute top-94 space-x-4 text-sm font-semibold capitalize sm:flex sm:space-x-6">
-            <a
-              href="/"
-              className="rounded-md bg-black/70 px-5 py-3 font-medium text-white sm:px-10 md:px-20"
-            >
-              <span className="flex">{leftBtnText}</span>
-            </a>
-            {rightBtnText && (
+          <section className="absolute top-94  text-sm font-semibold capitalize sm:flex">
+            <div className="inline-block space-x-4 sm:space-x-6">
               <a
                 href="/"
-                className="rounded-md bg-white/70 px-5 py-3 font-medium text-black sm:px-6  md:px-20 "
+                className="rounded-md bg-black/70 px-5 py-3 font-medium text-white sm:px-10 md:px-20"
               >
-                <span>{rightBtnText}</span>
+                <span>{leftBtnText}</span>
               </a>
-            )}
+              {rightBtnText && (
+                <a
+                  href="/"
+                  className="rounded-md bg-white/70 px-5 py-3 font-medium text-black sm:px-6 md:px-20"
+                >
+                  <span>{rightBtnText}</span>
+                </a>
+              )}
+            </div>
           </section>
         </div>
       </div>
@@ -66,3 +70,13 @@ const Section: FC<SectionProps> = ({
 
 export default Section;
 // sm:px-6 sm:py-1 md:px-20 md:py-3
+/*
+{rightBtnText && (
+  <a
+    href="/"
+    className="rounded-md bg-white/70 px-5 py-3 font-medium text-black sm:px-6 md:px-20"
+    >
+      <span>{rightBtnText}</span>
+    </a>
+)}
+*/

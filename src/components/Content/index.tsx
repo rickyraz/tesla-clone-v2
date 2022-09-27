@@ -15,7 +15,7 @@ function Content() {
       <Section
         title="Model 3"
         alt="model 3"
-        desc="Order Online for"
+        desc="Order Online for "
         descLink="touchless delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
@@ -24,7 +24,7 @@ function Content() {
       <Section
         title="Model Y"
         alt="model y"
-        desc="Order Online for"
+        desc="Order Online for "
         descLink="touchless delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
@@ -33,7 +33,7 @@ function Content() {
       <Section
         title="Model S"
         alt="model S"
-        desc="Order Online for"
+        desc="Order Online for "
         descLink="touchless delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
@@ -42,7 +42,7 @@ function Content() {
       <Section
         title="Model X"
         alt="model x"
-        desc="Order Online for"
+        desc="Order Online for "
         descLink="touchless delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"

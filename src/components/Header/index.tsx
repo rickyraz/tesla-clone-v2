@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import teslaLogo from "../../assets/tesla.svg";
 import SideMenu from "./SideMenu";
-// import "./hover.css";
+import "./hover.css";
 
 export default function Header() {
   const [MenuSide, setMenuSide] = useState<boolean>(false);
@@ -28,6 +28,62 @@ const Logo: React.FC = () => {
   );
 };
 
+const Menu: React.FC = () => {
+  return (
+    <nav className="ml-16 md:ml-20 lgmax:hidden">
+      <a href="models">
+        <span className="">Model S</span>
+      </a>
+      <a href="model3">
+        <span>Model 3</span>
+      </a>
+      <a href="modelx">
+        <span>Model X</span>
+      </a>
+      <a href="modely">
+        <span>Model Y</span>
+      </a>
+      <a href="solarroof">
+        <span>Solar Roof</span>
+      </a>
+      <a href="solarpanel">
+        <span>Solar Panels</span>
+      </a>
+      <div className="animation"></div>
+    </nav>
+  );
+};
+
+interface RightProps {
+  showMenu: Dispatch<SetStateAction<boolean>>;
+}
+
+const RightMenu: React.FC<RightProps> = ({ showMenu }) => {
+  return (
+    <div className="pr-2 sm:pr-6 md:pr-8">
+      <nav className="lgmax:hidden">
+        <a href="#shop" id="kanan-satu">
+          Shop
+        </a>
+        <a href="#account" id="kanan-dua">
+          Account
+        </a>
+        <a id="kanan-tiga" onClick={() => showMenu(true)}>
+          Menu
+        </a>
+      </nav>
+      <a
+        className="z-50 cursor-pointer lg:hidden lgmax:bg-slate-500/20"
+        onClick={() => showMenu(true)}
+      >
+        Menu
+      </a>
+      <div className="animation"></div>
+    </div>
+  );
+};
+
+/*
 const Menu2: React.FC = () => {
   return (
     <nav>
@@ -40,7 +96,9 @@ const Menu2: React.FC = () => {
     </nav>
   );
 };
+*/
 
+/*
 const Menu: React.FC = () => {
   return (
     <nav className="relative ml-2 flex min-w-[600px] rounded-md md:ml-20 lgmax:hidden ">
@@ -90,40 +148,4 @@ const Menu: React.FC = () => {
     </nav>
   );
 };
-
-interface RightProps {
-  showMenu: Dispatch<SetStateAction<boolean>>;
-}
-
-const RightMenu: React.FC<RightProps> = ({ showMenu }) => {
-  return (
-    <ol className="flex pr-2 sm:pr-6 md:pr-8">
-      <div className="flex lgmax:hidden">
-        <li>
-          <a
-            href="#shop"
-            className="rounded-md py-2 px-4 hover:bg-slate-500/10"
-          >
-            Shop
-          </a>
-        </li>
-        <li>
-          <a
-            href="#account"
-            className="rounded-md py-2 px-4 hover:bg-slate-500/10"
-          >
-            Account
-          </a>
-        </li>
-      </div>
-      <li>
-        <a
-          className="z-50 cursor-pointer rounded-md py-2 px-4 hover:bg-slate-500/10 lgmax:bg-slate-500/20"
-          onClick={() => showMenu(true)}
-        >
-          Menu
-        </a>
-      </li>
-    </ol>
-  );
-};
+*/
