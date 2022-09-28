@@ -63,20 +63,20 @@ const RightMenu: React.FC<RightProps> = ({ showMenu }) => {
     <div className="pr-2 sm:pr-6 md:pr-8">
       <nav className="lgmax:hidden">
         <a href="#shop" id="kanan-satu">
-          Shop
+          <span>Shop</span>
         </a>
         <a href="#account" id="kanan-dua">
-          Account
+          <span>Account</span>
         </a>
         <a id="kanan-tiga" onClick={() => showMenu(true)}>
-          Menu
+          <span>Menu</span>
         </a>
       </nav>
       <a
         className="z-50 cursor-pointer lg:hidden lgmax:bg-slate-500/20"
         onClick={() => showMenu(true)}
       >
-        Menu
+        <span>Menu</span>
       </a>
       <div className="animation"></div>
     </div>

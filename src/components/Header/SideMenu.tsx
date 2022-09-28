@@ -28,7 +28,7 @@ const SideMenu: React.FC<RightProps> = ({ thisMenu, showMenu }) => {
         { right: "0%", opacity: 1, duration: 0.8 }
       );
     } else {
-      gsap.to(menu, { right: "-50%", opacity: 0, duration: 0.75 });
+      gsap.to(menu, { right: "-80%", opacity: 0, duration: 0.8 });
     }
   });
 
