@@ -1,6 +1,7 @@
 import React, { FC, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface SectionProps {
   title: string;
@@ -25,6 +26,7 @@ const Section: FC<SectionProps> = ({
   const elem0 = useRef(null);
   const elem1 = useRef(null);
   const elem2 = useRef(null);
+
   useLayoutEffect(() => {
     const title = elem0.current;
     const desc = elem1.current;
@@ -49,7 +51,7 @@ const Section: FC<SectionProps> = ({
       },
       y: 40,
       opacity: 0,
-      duration: 0.3,
+      duration: 0.8,
       ease: "power2.out",
       stagger: 0.5,
       repeatRefresh: true,
@@ -57,7 +59,7 @@ const Section: FC<SectionProps> = ({
       [title, desc, btn],
       0.1,
       {
-        scrollTrigger: containers,
+        duration: 0.8,
         y: 0,
         opacity: 100,
         repeatRefresh: true,
@@ -68,8 +70,7 @@ const Section: FC<SectionProps> = ({
 
   return (
     <section className="relative snap-start font-montserrat">
-      {/* BG */}
-      <img
+      <LazyLoadImage
         src={backgroundImage}
         alt={alt}
         className=" h-screen w-full object-cover"
@@ -120,4 +121,3 @@ const Section: FC<SectionProps> = ({
 };
 
 export default Section;
-// gsap.fromTo(title!, { y: 10, opacity: 0 }, { y: 0, opacity: 0 });

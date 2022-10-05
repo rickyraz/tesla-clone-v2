@@ -124,7 +124,7 @@ const SideMenu: React.FC<RightProps> = ({ thisMenu, showMenu }) => {
       <section className="box-border scroll-smooth px-8 pb-12 pt-1">
         <ol className="relative flex flex-col scroll-smooth ">
           {words.map((item) => (
-            <li className="mb-2 flex rounded hover:bg-slate-500/10 hover:transition hover:duration-300 hover:ease-in">
+            <li className="mb-2 inline-block rounded py-1 hover:bg-slate-500/10 hover:transition hover:duration-300 hover:ease-in">
               <a className="py-1 px-2 font-medium" href={item.href}>
                 <span className="mx-1">{item.title}</span>
               </a>

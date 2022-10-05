@@ -1,13 +1,13 @@
 import React from "react";
 import Section from "./Section";
 
-import model3 from "../../assets/bg/model-3.jpg";
-import modely from "../../assets/bg/model-y.jpg";
-import models from "../../assets/bg/model-s.jpg";
+import model3 from "../../assets/bg/model-3.webp";
+import modely from "../../assets/bg/model-y.webp";
+import models from "../../assets/bg/model-s.webp";
 import modelx from "../../assets/bg/model-x.webp";
-import solarpanels from "../../assets/bg/solar-panel.jpg";
-import solarroof from "../../assets/bg/solar-roof.jpg";
-import accessories from "../../assets/bg/accessories.jpg";
+import solarpanels from "../../assets/bg/solar-panel.webp";
+import solarroof from "../../assets/bg/solar-roof.webp";
+import accessories from "../../assets/bg/accessories.webp";
 
 function Content() {
   return (
@@ -20,6 +20,7 @@ function Content() {
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
         backgroundImage={model3}
+        key="1"
       />
       <Section
         title="Model Y"
@@ -29,6 +30,7 @@ function Content() {
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
         backgroundImage={modely}
+        key="2"
       />
       <Section
         title="Model S"
@@ -38,6 +40,7 @@ function Content() {
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
         backgroundImage={models}
+        key="3"
       />
       <Section
         title="Model X"
@@ -47,6 +50,7 @@ function Content() {
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
         backgroundImage={modelx}
+        key="4"
       />
       <Section
         title="Solar Panels"
@@ -55,6 +59,7 @@ function Content() {
         leftBtnText="Order Now"
         rightBtnText="Learn More"
         backgroundImage={solarpanels}
+        key="5"
       />
       <Section
         title="Solar Roof"
@@ -63,12 +68,15 @@ function Content() {
         leftBtnText="Order Now"
         rightBtnText="Learn More"
         backgroundImage={solarroof}
+        key="6"
       />
       <Section
         title="Accessories"
         alt=" accessories"
         leftBtnText="Shop Now"
+        rightBtnText=""
         backgroundImage={accessories}
+        key="7"
       />
     </main>
   );

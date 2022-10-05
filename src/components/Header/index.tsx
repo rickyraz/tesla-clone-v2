@@ -73,7 +73,7 @@ const RightMenu: React.FC<RightProps> = ({ showMenu }) => {
         </a>
       </nav>
       <a
-        className="z-50 cursor-pointer lg:hidden lgmax:bg-slate-500/20"
+        className="z-50 cursor-pointer rounded-md py-1 px-3 lg:hidden lgmax:bg-slate-500/20"
         onClick={() => showMenu(true)}
       >
         <span>Menu</span>
