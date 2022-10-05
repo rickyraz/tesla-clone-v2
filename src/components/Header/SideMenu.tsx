@@ -5,6 +5,7 @@ import React, {
   useLayoutEffect,
 } from "react";
 import { gsap } from "gsap";
+import { useOuterClick } from "react-outer-click";
 
 interface RightProps {
   showMenu: Dispatch<SetStateAction<boolean>>;
@@ -14,6 +15,11 @@ interface RightProps {
 // showMenu is seState && thisMenu is State
 const SideMenu: React.FC<RightProps> = ({ thisMenu, showMenu }) => {
   const elem0 = useRef(null);
+
+  useOuterClick(elem0, (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    showMenu(false);
+  });
 
   const toggleShow = () => {
     showMenu(!thisMenu);
