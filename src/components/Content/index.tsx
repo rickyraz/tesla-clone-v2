@@ -13,42 +13,48 @@ function Content() {
   return (
     <main className="h-screen w-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden">
       <Section
+        title="Model Y"
+        alt="model y"
+        descLink="View Inventory"
+        leftBtnText="Custom Order"
+        rightBtnText="Demo Drive"
+        backgroundImage={modely}
+        key="2"
+      />
+      <Section
         title="Model 3"
         alt="model 3"
-        desc="Order Online for "
-        descLink="touchless delivery"
+        descLink="View Inventory"
         leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
+        rightBtnText="Demo Drive"
         backgroundImage={model3}
         key="1"
       />
       <Section
         title="Model Y"
         alt="model y"
-        desc="Order Online for "
-        descLink="touchless delivery"
+        descLink="View Inventory"
         leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
+        rightBtnText="Demo Drive"
         backgroundImage={modely}
         key="2"
       />
+
       <Section
         title="Model S"
         alt="model S"
-        desc="Order Online for "
-        descLink="touchless delivery"
+        descLink="View Inventory"
         leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
+        rightBtnText="Demo Drive"
         backgroundImage={models}
         key="3"
       />
       <Section
         title="Model X"
         alt="model x"
-        desc="Order Online for "
-        descLink="touchless delivery"
+        descLink="View Inventory"
         leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
+        rightBtnText="Demo Drive"
         backgroundImage={modelx}
         key="4"
       />
@@ -72,7 +78,7 @@ function Content() {
       />
       <Section
         title="Accessories"
-        alt=" accessories"
+        alt="accessories"
         leftBtnText="Shop Now"
         rightBtnText=""
         backgroundImage={accessories}
